@@ -1,6 +1,6 @@
 "use client";
 
-import { useIsMobile } from "@repo/design-system/hooks/use-mobile";
+import { useIsMobile } from "@pkg/design-system/hooks/use-mobile";
 import { motion } from "motion/react";
 import { LanguageSwitcher } from "../../../../components/layouts/language-switcher";
 import { ThemeToggle } from "../../../../components/layouts/theme-toggle";

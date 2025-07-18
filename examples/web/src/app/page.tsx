@@ -25,7 +25,6 @@ import Link from "next/link";
 import ClipboardButton from "../components/clipboard-button";
 import MobileNavigation from "../components/mobile-navigation";
 import { ThemeToggle } from "../components/theme-toggle";
-import React from "react";
 
 const features = [
   {
@@ -101,6 +100,7 @@ const techStack = [
 ];
 
 export default function Home() {
+  const a: any = 1;
   return (
     <div className="min-h-screen bg-background">
       {/* Subtle gradient accent */}

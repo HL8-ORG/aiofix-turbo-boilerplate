@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FAQSection } from "../sections/faq";
-import { HeroSection } from "../sections/hero";
-import { TeamSection } from "../sections/team";
+import { FAQSection } from "./sections/faq";
+import { HeroSection } from "./sections/hero";
+import { TeamSection } from "./sections/team";
 import { Header } from "../header/header";
 import { motion } from "framer-motion";
-import { FeaturesSection } from "../sections/features";
+import { FeaturesSection } from "./sections/features";
 
 export default function LandingView() {
   const [transition, setTransition] = useState(false);

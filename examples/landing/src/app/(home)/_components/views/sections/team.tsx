@@ -1,4 +1,4 @@
-import { GithubIcon } from "@repo/design-system/components/icons/github-icon";
+import { GithubIcon } from "@pkg/design-system/components/icons/github-icon";
 import { XIcon } from "lucide-react";
 import {
   Card,
@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-} from "@repo/design-system/components/shadcn-ui/card";
+} from "@pkg/design-system/components/shadcn/card";
 import Image from "next/image";
 import Link from "next/link";
 interface TeamProps {
@@ -178,7 +178,7 @@ export const TeamSection = () => {
         {teamList.map(
           (
             { imageUrl, firstName, lastName, positions, socialNetworks },
-            index,
+            index
           ) => (
             <Card
               key={index}
@@ -224,7 +224,7 @@ export const TeamSection = () => {
                 ))}
               </CardFooter>
             </Card>
-          ),
+          )
         )}
       </div>
     </section>

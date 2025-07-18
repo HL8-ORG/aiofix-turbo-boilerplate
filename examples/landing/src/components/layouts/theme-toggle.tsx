@@ -34,13 +34,13 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import { Button } from "@repo/design-system/components/shadcn-ui/button";
+import { Button } from "@pkg/design-system/components/shadcn/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@repo/design-system/components/shadcn-ui/dropdown-menu";
+} from "@pkg/design-system/components/shadcn/dropdown-menu";
 
 export function ThemeToggle() {
   const { setTheme } = useTheme();

@@ -1,10 +1,10 @@
-import { GoogleIcon } from "@repo/design-system/components/icons/google-icon";
+import { GoogleIcon } from "@pkg/design-system/components/icons/google-icon";
 import {
 	Card,
 	CardContent,
 	CardHeader,
 	CardTitle,
-} from "@repo/design-system/components/shadcn-ui/card";
+} from "@pkg/design-system/components/shadcn/card";
 
 interface FeaturesProps {
 	icon: string;

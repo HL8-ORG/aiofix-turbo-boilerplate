@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import type React from "react";
 import "@/styles/globals.css";
 import "@/styles/loading.css";
-import { Toaster } from "@repo/design-system/components/shadcn-ui/sonner";
+import { Toaster } from "@pkg/design-system/components/shadcn/sonner";
 import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { ThemeProvider } from "next-themes";
@@ -59,7 +59,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background flex flex-col font-sans antialiased",
+          "min-h-screen bg-background flex flex-col font-sans antialiased"
         )}
       >
         <ThemeProvider

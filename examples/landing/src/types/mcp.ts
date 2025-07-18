@@ -1,4 +1,4 @@
-import { Tool } from "ai";
+import type { Tool } from "ai";
 import { z } from "zod";
 
 export const MCPRemoteConfigZodSchema = z.object({
@@ -93,10 +93,10 @@ export type McpToolCustomizationRepository = {
     mcpServerId: string;
   }) => Promise<McpToolCustomization[]>;
   selectByUserId: (
-    userId: string,
+    userId: string
   ) => Promise<(McpToolCustomization & { serverName: string })[]>;
   upsertToolCustomization: (
-    data: PartialBy<McpToolCustomization, "id">,
+    data: PartialBy<McpToolCustomization, "id">
   ) => Promise<McpToolCustomization>;
   deleteToolCustomization: (key: {
     userId: string;
@@ -123,10 +123,10 @@ export type McpServerCustomizationRepository = {
     mcpServerId: string;
   }) => Promise<(McpServerCustomization & { serverName: string }) | null>;
   selectByUserId: (
-    userId: string,
+    userId: string
   ) => Promise<(McpServerCustomization & { serverName: string })[]>;
   upsertMcpServerCustomization: (
-    data: PartialBy<McpServerCustomization, "id">,
+    data: PartialBy<McpServerCustomization, "id">
   ) => Promise<McpServerCustomization>;
   deleteMcpServerCustomizationByMcpServerIdAndUserId: (key: {
     mcpServerId: string;

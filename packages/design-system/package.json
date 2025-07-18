@@ -8,6 +8,7 @@
     "./lib/*": "./src/lib/*.ts",
     "./components/shadcn/*": "./src/components/shadcn/*.tsx",
     "./components/icons/*": "./src/components/icons/*.tsx",
+    "./components/fonts/*": "./src/components/fonts/*.tsx",
     "./hooks/*": "./src/hooks/*.ts"
   },
   "scripts": {

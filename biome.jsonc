@@ -1,0 +1,99 @@
+{
+  /**
+   * 指定使用的Biome配置JSON Schema版本
+   */
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+
+  /**
+   * 版本控制系统相关配置
+   */
+  "vcs": {
+    "enabled": false, // 是否启用VCS集成
+    "clientKind": "git", // 使用的VCS类型
+    "useIgnoreFile": false // 是否使用.gitignore文件
+  },
+
+  /**
+   * 文件处理配置
+   */
+  "files": {
+    "ignoreUnknown": false, // 是否忽略未知文件类型
+    "includes": [
+      // 包含的文件模式
+      "**", // 所有文件
+      "!**/node_modules", // 排除node_modules
+      "!**/dist", // 排除dist目录
+      "!**/public", // 排除public目录
+      "!**/.next", // 排除.next目录
+      "!**/content" // 排除content目录
+    ]
+  },
+
+  /**
+   * 格式化器配置
+   */
+  "formatter": {
+    "enabled": true, // 启用格式化
+    "indentStyle": "space" // 使用空格缩进
+  },
+
+  /**
+   * 代码辅助功能配置
+   */
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [":URL:", ":NODE:"]
+          }
+        }
+      }
+    }
+  },
+
+  /**
+   * 代码检查器配置
+   */
+  "linter": {
+    "enabled": true, // 启用代码检查
+    "rules": {
+      "recommended": true, // 使用推荐规则
+      "suspicious": {
+        // 可疑代码规则
+        "noExplicitAny": "info", // 禁止使用any类型(信息级别)
+        "noArrayIndexKey": "off" // 关闭禁止使用数组索引作为key的检查
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
+      "security": {
+        // 安全相关规则
+        "noDangerouslySetInnerHtml": "off" // 关闭禁止使用dangerouslySetInnerHTML的检查
+      },
+      "style": {
+        // 代码风格规则
+        "noParameterAssign": "error", // 禁止参数重新赋值
+        "useAsConstAssertion": "error", // 强制使用as const断言
+        "useDefaultParameterLast": "error", // 默认参数必须放在最后
+        "useEnumInitializers": "error", // 强制枚举初始化
+        "useSelfClosingElements": "error", // 使用自闭合标签
+        "useSingleVarDeclarator": "error", // 使用单变量声明
+        "noUnusedTemplateLiteral": "error", // 禁止未使用的模板字面量
+        "useNumberNamespace": "error", // 使用Number命名空间方法
+        "noInferrableTypes": "error", // 禁止可推断的类型注解
+        "noUselessElse": "error" // 禁止无用的else语句
+      }
+    }
+  },
+
+  /**
+   * JavaScript特定格式化配置
+   */
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single" // 使用单引号
+    }
+  }
+}

@@ -1,28 +1,30 @@
 "use client";
 
-import { getLocaleAction } from "@/i18n/get-locale";
-import { COOKIE_KEY_LOCALE, SUPPORTED_LOCALES } from "@/lib/const";
-import { Button } from "@repo/design-system/components/shadcn-ui/button";
+import { Button } from "@pkg/design-system/components/shadcn/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@repo/design-system/components/shadcn-ui/dropdown-menu";
+} from "@pkg/design-system/components/shadcn/dropdown-menu";
+import Cookies from "js-cookie";
 import { Languages } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useCallback } from "react";
 import useSWR from "swr";
+import { getLocaleAction } from "@/i18n/get-locale";
+import { COOKIE_KEY_LOCALE, SUPPORTED_LOCALES } from "@/lib/const";
 
 export function LanguageSwitcher() {
   const t = useTranslations("Layout");
   const { data: currentLocale } = useSWR(COOKIE_KEY_LOCALE, getLocaleAction, {
-    fallbackData: SUPPORTED_LOCALES[0].code,
+    fallbackData: SUPPORTED_LOCALES[0]?.code,
     revalidateOnFocus: false,
   });
+
   const handleOnChange = useCallback((locale: string) => {
-    document.cookie = `${COOKIE_KEY_LOCALE}=${locale}; path=/;`;
+    Cookies.set(COOKIE_KEY_LOCALE, locale, { path: "/" });
     window.location.reload();
   }, []);
 

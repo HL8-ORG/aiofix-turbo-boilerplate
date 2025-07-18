@@ -9,7 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@repo/design-system/components/shadcn-ui/dropdown-menu";
+} from "@pkg/design-system/components/shadcn/dropdown-menu";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -64,7 +64,7 @@ export default function MobileMenu() {
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem className="p-2 focus:bg-transparent justify-end">
-              <div className="flex items-center gap-x-4"></div>
+              <div className="flex items-center gap-x-4" />
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>

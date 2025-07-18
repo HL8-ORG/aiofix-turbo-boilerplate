@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@repo/design-system/components/shadcn-ui/button";
-import { fonts } from "@repo/design-system/lib/fonts";
+import { Button } from "@pkg/design-system/components/shadcn/button";
+import { fonts } from "@pkg/design-system/lib/fonts";
 import type NextError from "next/error";
 import { useEffect } from "react";
 

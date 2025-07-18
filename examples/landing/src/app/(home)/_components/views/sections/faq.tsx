@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@repo/design-system/components/shadcn-ui/accordion";
+} from "@pkg/design-system/components/shadcn/accordion";
 
 interface FAQProps {
   question: string;

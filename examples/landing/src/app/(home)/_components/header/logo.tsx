@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { cn } from '@repo/design-system/lib/utils';
-import { type SVGMotionProps, motion } from 'motion/react';
+import { cn } from "@pkg/design-system/lib/utils";
+import { type SVGMotionProps, motion } from "motion/react";
 // 动画效果
 const pathVariants = {
   hidden: {
@@ -13,34 +13,34 @@ const pathVariants = {
     fillOpacity: 1,
     transition: {
       duration: 2,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 } as const;
 
 const sizes = {
   xs: {
-    svg: 'h-4',
-    betaTag: 'bottom-[1px] left-[calc(100%+4px)] px-1 py-0.5 text-[8px]',
+    svg: "h-4",
+    betaTag: "bottom-[1px] left-[calc(100%+4px)] px-1 py-0.5 text-[8px]",
   },
   sm: {
-    svg: 'h-6',
-    betaTag: 'bottom-[2px] left-[calc(100%+6px)] px-1.5 py-0.5 text-[9px]',
+    svg: "h-6",
+    betaTag: "bottom-[2px] left-[calc(100%+6px)] px-1.5 py-0.5 text-[9px]",
   },
   lg: {
-    svg: 'h-12',
-    betaTag: 'bottom-[4px] left-[calc(100%+10px)] px-2 py-0.5 text-base',
+    svg: "h-12",
+    betaTag: "bottom-[4px] left-[calc(100%+10px)] px-2 py-0.5 text-base",
   },
   xl: {
-    svg: 'h-14',
-    betaTag: 'bottom-[7px] left-[calc(100%+15px)] px-2.5 py-1 text-base',
+    svg: "h-14",
+    betaTag: "bottom-[7px] left-[calc(100%+15px)] px-2.5 py-1 text-base",
   },
 };
 
 export const Logo = ({
   betaTag = false,
   draw = false,
-  size = 'sm',
+  size = "sm",
   className,
   containerClassName,
   ...props
@@ -51,7 +51,7 @@ export const Logo = ({
   size?: keyof typeof sizes;
 } & SVGMotionProps<SVGSVGElement>) => {
   return (
-    <div className={cn('relative', containerClassName)}>
+    <div className={cn("relative", containerClassName)}>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 73 40"
@@ -61,8 +61,8 @@ export const Logo = ({
         {/* 你可以在这里修改logo https://danmarshall.github.io/google-font-to-svg-path/ */}
         <motion.path
           variants={draw ? pathVariants : {}}
-          initial={draw ? 'hidden' : false}
-          animate={draw ? 'visible' : false}
+          initial={draw ? "hidden" : false}
+          animate={draw ? "visible" : false}
           stroke="currentColor"
           strokeWidth={0.5}
           className="fill-blue-600 dark:fill-red-600"
@@ -73,11 +73,11 @@ export const Logo = ({
         <motion.div
           className={cn(
             sizes[size].betaTag,
-            'absolute bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 rounded-full'
+            "absolute bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 rounded-full"
           )}
           initial={draw ? { opacity: 0 } : undefined}
           animate={draw ? { opacity: 1 } : undefined}
-          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           中国
         </motion.div>

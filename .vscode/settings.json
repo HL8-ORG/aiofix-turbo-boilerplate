@@ -4,6 +4,7 @@
       "mode": "auto"
     }
   ],
+  "css.lint.unknownAtRules": "ignore",
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit",
     "source.fixAll.biome": "explicit",

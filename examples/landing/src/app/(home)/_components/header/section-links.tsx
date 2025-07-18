@@ -1,5 +1,4 @@
 "use client";
-import { PRO_VERSION, SOURCE_CODE_URL } from "@/config/site";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 

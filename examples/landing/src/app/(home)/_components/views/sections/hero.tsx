@@ -1,15 +1,13 @@
 "use client";
 import ProminentTxt from "@/components/prominent-txt";
-import { Badge } from "@repo/design-system/components/shadcn-ui/badge";
-import { Button } from "@repo/design-system/components/shadcn-ui/button";
-import { ArrowRight } from "lucide-react";
+import { Button } from "@pkg/design-system/components/shadcn/button";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export const HeroSection = () => {
   const t = useTranslations("Home");
   return (
-    <section className="container w-full">
+    <section className="container">
       <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
         <div className="text-center space-y-8">
           <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">

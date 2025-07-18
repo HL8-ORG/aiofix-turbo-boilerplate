@@ -1,7 +1,7 @@
 "use client";
 
 import { PageTransition } from "@/components/page-transition";
-import { Button } from "@repo/design-system/components/shadcn-ui/button";
+import { Button } from "@pkg/design-system/components/shadcn/button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
