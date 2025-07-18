@@ -1,0 +1,46 @@
+---
+description: 本项目的tsconfig
+globs:
+alwaysApply: false
+---
+本项目是一个包含前端和后端的全栈的一个大型项目，我们使用`TypeScript`来编写代码，并使用`monorepo`+`pnpm`来管理代码。
+
+- `TypeScript`的配置集中由`@repo/typescript-config`子项目管理，代码位于`configs/typescript-config`目录下，我们创建了一个基础配置`base.json`，主项目以及所有的子项目都会继承这个配置，内容如下：
+```json
+{
+  // 使用官方提供的TS配置JSON schema，提供编辑器的智能提示和验证
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // 使用Node.js的ES模块系统（需要配合package.json的"type": "module"）
+    "module": "NodeNext",    
+    // 编译目标为ES2022语法
+    "target": "ES2022",    
+    // 生成.d.ts类型声明文件（发布库时需要）
+    "declaration": true,    
+    // 为声明文件生成sourcemap，方便调试类型定义
+    "declarationMap": true,    
+    // 允许CommonJS和ES模块互操作（处理默认导入问题）
+    "esModuleInterop": true,    
+    // 启用增量编译（可加速后续编译,在首次编译后生成一个 .tsbuildinfo 文件，记录项目的编译状态（如文件依赖关系、类型检查结果等）后续编译时，TypeScript 会对比文件变化，进编译变动的文件）
+    "incremental": true,  
+    // 允许被其他项目引用，并支持 `tsc --build` 增量构建  
+    "composite": true,      
+    // 确保每个文件能独立编译（Babel等工具需要）    
+    "isolatedModules": true,    
+    // 包含ES2022、浏览器DOM和可迭代DOM的类型定义
+    "lib": ["es2022", "DOM", "DOM.Iterable"],    
+    // 强制将所有文件视为模块（避免全局脚本的歧义）
+    "moduleDetection": "force",    
+    // 使用Node.js的模块解析策略（Node.js ESM + CJS 混合环境，可处理import路径）
+    "moduleResolution": "NodeNext",    
+    // 对索引访问进行严格检查（array[0]会是T | undefined类型）
+    "noUncheckedIndexedAccess": true,    
+    // 允许导入JSON文件（如配置文件）
+    "resolveJsonModule": true,    
+    // 跳过声明文件类型检查（提升编译速度）
+    "skipLibCheck": true,    
+    // 启用所有严格类型检查选项
+    "strict": true
+  }
+}
+```
